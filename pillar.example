@@ -1,0 +1,38 @@
+zfs:
+  fs:
+    - dataset: zroot/jails
+      properties:
+        compression: lz4
+        mountpoint: /jails
+        exec: on
+
+    - dataset: zroot/data
+      properties:
+        compression: lz4
+        mountpoint: /data
+
+    - dataset: zroot/jails/gitlab-ce
+    - dataset: zroot/jails/logging
+    - dataset: zroot/jails/nextcloud
+    - dataset: zroot/jails/pg11
+    - dataset: zroot/jails/www1
+    - dataset: zroot/jails/influxdb
+    - dataset: zroot/jails/salt
+    - dataset: zroot/jails/icinga
+
+    - dataset: zroot/data/jails
+    - dataset: zroot/data/jails/gitlab-ce
+    - dataset: zroot/data/jails/logging
+    - dataset: zroot/data/jails/nextcloud
+    - dataset: zroot/data/jails/influxdb
+    - dataset: zroot/data/jails/salt
+    - dataset: zroot/data/jails/icinga
+    - dataset: zroot/data/jails/pg11
+    - dataset: zroot/data/jails/pg11/backups
+      properties:
+        compression: gzip-9
+    - dataset: zroot/data/jails/pg11/data11
+      properties:
+        recordsize: 8k
+        atime: off
+    - dataset: zroot/data/jails/www1
