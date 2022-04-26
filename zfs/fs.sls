@@ -14,7 +14,7 @@ zfs_dataset_{{ loop.index0 }}:
       - zfs: zfs_dataset_{{ loop.index0 - 1 }}
     {%- endif %}
   {% else %}
-  zfs.filesystem.absent:
+  zfs.filesystem_absent:
     - name: {{ zfs_dataset.dataset }}
   {% endif %}
 {% endfor %}
