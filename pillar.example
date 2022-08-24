@@ -35,4 +35,7 @@ zfs:
       properties:
         recordsize: 8k
         atime: off
+      permissions:
+        - unallow -u someuser destroy,create
+        - allow -g somegroup snapshot,mount
     - dataset: zroot/data/jails/www1
