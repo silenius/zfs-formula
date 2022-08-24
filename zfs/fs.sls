@@ -32,7 +32,7 @@ zfs_dataset_{{ outer_loop.index0 }}_permission_{{ loop.index0 }}:
     - shell: /bin/sh
     {%- if loop.index0 > 0 %}
     - require:
-      - zfs: zfs_dataset_{{ outer_loop.index0 }}_permission_{{ loop.index0 -1 }}
+      - cmd: zfs_dataset_{{ outer_loop.index0 }}_permission_{{ loop.index0 - 1 }}
     {%- endif %}
 
 {% endif %}
